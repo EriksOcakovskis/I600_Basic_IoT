@@ -1,7 +1,7 @@
 # make_server is used to create this simple python webserver
 from wsgiref.simple_server import make_server
 # import led control library
-import erik
+import peep
 
 # Function that is ran when a http request comes in
 def light_app(env, start_response):
@@ -14,8 +14,8 @@ def light_app(env, start_response):
     # Checks what path is sent via GET
     if env["PATH_INFO"] == "/on":
         print("user asked for /on")
-        erik.cleanLed()
-        erik.redOn()
+        peep.cleanLed()
+        peep.redOn()
         return '<!DOCTYPE html>'\
                 '<html>'\
                     '<head>'\
@@ -28,7 +28,7 @@ def light_app(env, start_response):
 
     elif env["PATH_INFO"] == "/off":
         print("user asked for /off")
-        erik.cleanLed()
+        peep.cleanLed()
         return '<!DOCTYPE html>'\
                 '<html>'\
                     '<head>'\
