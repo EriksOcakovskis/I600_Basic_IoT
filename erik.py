@@ -42,6 +42,7 @@ def blueOff():
 def greenOff():
   GPIO.output(green, True)
 
+# turns the leds on and off in Polyrithmic fashion
 def polyrithmOn():
   for i in range (0, 60, 1):
 
