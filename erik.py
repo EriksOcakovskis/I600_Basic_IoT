@@ -29,3 +29,36 @@ def blueOn():
 # turn on green led
 def greenOn():
   GPIO.output(green, False)
+
+# turn red led off
+def redOff():
+  GPIO.output(red, True)
+
+# turn blue led off
+def blueOff():
+  GPIO.output(blue, True)
+
+# turn green led off
+def greenOff():
+  GPIO.output(green, True)
+
+# turns the leds on and off in Polyrithmic fashion
+def polyrithmOn():
+  for i in range (0, 60, 1):
+
+    if i%3==0:
+      greenOn()
+    elif i%3!=0:
+      greenOff()
+
+    if i%4==0:
+      blueOn()
+    elif i%4!=0:
+      blueOff()
+
+    if i%5==0:
+      redOn()
+    elif i%5!=0:
+      redOff()
+
+    sleep(0.5)
