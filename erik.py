@@ -61,4 +61,4 @@ def polyrithmOn():
     elif i%5!=0:
       redOff()
 
-    sleep(0.5)
+    sleep(0.1)
